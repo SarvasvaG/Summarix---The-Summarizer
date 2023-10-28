@@ -1,4 +1,5 @@
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,url_for
+import summariser
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,13 +10,15 @@ def index():
 def input():
     if request.method == 'POST':
         s = request.form['inputText']
-        f = request.files['documentUpload']
-        return render_template('output.html',st = s,file = f)
+        summary = summariser.funSum(s)
+        # f = request.files['documentUpload']
+        return render_template('output.html',out = summary, inp = s)
     return render_template('input.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True,port=8080)
