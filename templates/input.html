@@ -136,9 +136,12 @@
 
     const textArea = document.getElementById('textArea');
     const wordCount = document.getElementById('wordCount');
-
+    if(textArea){
+        const text = textArea.value;
+        const words = text.split(/\s+/).filter(word => word.length > 0);
+        wordCount.textContent = words.length + "/10000 words";
+    }
     textArea.addEventListener('input', function () {
-        console.log("5");
         if(textArea){
         const text = textArea.value;
         const words = text.split(/\s+/).filter(word => word.length > 0);
