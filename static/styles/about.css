@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    overflow-x: hidden;
-}
+@import url('./partials/nav.css');
+@import url('./partials/footer.css');
 
 .bgImg {
     background: url('../images/line.png');
@@ -23,73 +15,6 @@ body {
     width: 100%;
 
     position: relative;
-}
-
-.navBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    z-index: 100;
-}
-
-nav {
-    display: flex;
-
-    background-color: #000000E6;
-    padding: 0.5% 6% 0.5%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav img {
-    width: 50px;
-}
-
-.navLinks {
-    flex: 1;
-    text-align: right;
-}
-
-.navLinks ul li {
-    list-style: none;
-    display: inline-block;
-
-    padding: 8px 12px;
-
-    position: relative;
-}
-
-.navLinks ul li a {
-    color: #FFFFFF;
-    text-decoration: none;
-    letter-spacing: 0.3px;
-
-    font-size: 15px;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-
-    transition: all 1s ease-in-out;
-}
-
-.navLinks ul li a::after {
-    content: '';
-    height: 2px;
-    background-color: #0000ee;
-    width: 0%;
-    display: block;
-    margin: auto;
-
-    transition: all 0.2s ease-in-out;
-}
-
-.navLinks ul li a:hover::after {
-    width: 100%;
-}
-
-.navLinks .fa {
-    display: none;
 }
 
 .textBox {
@@ -111,13 +36,11 @@ nav img {
     from {
         opacity: 0;
         transform: translate(-50%, -40%);
-        /* Move element down */
     }
 
     to {
         opacity: 1;
         transform: translate(-50%, -50%);
-        /* Bring element to its original position */
     }
 }
 
@@ -156,15 +79,7 @@ nav img {
     border: 1px solid #FFFFFF;
 }
 
-nav .fa {
-    display: none;
-}
-
 @media (max-width: 768px) {
-    .navLinks ul li a {
-        font-size: 12px;
-    }
-
     .textBox {
         width: 90%;
 
@@ -181,54 +96,7 @@ nav .fa {
     .textBox p {
         font-size: 15px;
     }
-
-    .navLinks ul li {
-        display: inline-block;
-    }
-
-    .navBar {
-        position: fixed;
-        width: 100%;
-        z-index: 2;
-    }
-
-    .navLinks {
-        position: fixed;
-        background-color: #111111;
-
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right: -200px;
-
-
-        text-align: left;
-        z-index: 1;
-
-        transition: all 0.5s ease-out;
-    }
-
-    .show {
-        right: 0;
-    }
-
-    nav .fa,
-    .navLinks .fa {
-        display: block;
-        color: #FFFFFF;
-
-        font-size: 22px;
-
-        margin: 10px;
-        cursor: pointer;
-    }
-
-    .navLinks ul {
-        padding: 30px;
-    }
-
 }
-
 .teamSection {
     background: linear-gradient(#111111, #222222, #333333, #444444);
 }
@@ -351,58 +219,4 @@ nav .fa {
 .teamSection {
     position: relative;
     overflow: hidden;
-}
-
-.footer {
-    font-size: 17.5px;
-    font-family: 'Roboto', sans-serif;
-
-    padding-top: 50px;
-    text-align: center;
-
-    color: #cccccc;
-    background-color: #000000;
-}
-
-.footer i {
-    color: #1f62e9;
-
-    font-size: 30px;
-
-    padding: 0px 15px;
-
-    transition: all 0.2s ease-out;
-}
-
-.footer i:hover {
-    color: #cccccc;
-}
-
-.footer p {
-    width: 80%;
-    margin: auto;
-    padding: 25px 0px;
-}
-
-.footer p i {
-    color: #cccccc;
-
-    font-size: 20px;
-
-    padding: 0;
-}
-
-@media (max-width: 768px) {
-    .footer {
-        font-size: 15px;
-        padding-top: 30px;
-    }
-
-    .footer i {
-        font-size: 25px;
-    }
-
-    .footer p i {
-        font-size: 15px;
-    }
 }
